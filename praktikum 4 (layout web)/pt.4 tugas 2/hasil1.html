@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>pertemuan 5 pemweb</title>
+    <style>
+        body {
+            display: grid;
+            grid-template-areas: 
+                "header header header"
+                "nav article aside"
+                "footer footer footer";
+            grid-template-columns: 1fr 2fr 1fr;
+            grid-template-rows: auto 1fr auto;
+            gap: 10px;
+            height: 100vh;
+        }
+        header {
+            grid-area: header;
+            background-color: yellow;
+            padding: 10px;
+        }
+        nav {
+            grid-area: nav;
+            background-color: lightgreen;
+            padding: 10px;
+        }
+        article {
+            grid-area: article;
+            background-color: lightcoral;
+            padding: 10px;
+        }
+        aside {
+            grid-area: aside;
+            background-color: lightblue;
+            padding: 10px;
+        }
+        footer {
+            grid-area: footer;
+            background-color: yellow;
+            padding: 10px;
+        }
+        section {
+            background-color: lightyellow;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>Header</header>
+    <nav>Navigation</nav>
+    <article>
+        <section>Section 1</section>
+        <section>Section 2</section>
+        <section>Section 3</section>
+    </article>
+    <aside>Aside</aside>
+    <footer>Footer</footer>
+
+</body>
+</html>

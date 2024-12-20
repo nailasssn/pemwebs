@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Pemesanan Barang</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background: url(https://i.pinimg.com/736x/8f/d3/a3/8fd3a3cb0c04b7becb57dd063809645c.jpg);
+      text-align: center;
+      margin-top: 70px;
+    }
+    form {
+      max-width: 500px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f7e6ce;
+    }
+    input, select, button {
+      width: 90%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form Pemesanan Barang</h1>
+  <form id="orderForm">
+    <label for="name">Nama Pemesan</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="item">Kode Barang</label>
+    <input type="text" id="item" name="item" required>
+
+    <label for="quantity">Jumlah Barang</label>
+    <input type="number" id="quantity" name="quantity" min="1" required>
+
+    <label for="address">Alamat Pengiriman</label>
+    <input type="text" id="address" name="address" required>
+
+    <label for="nomor">Telp Number</label></td>
+    <input type="number" name="number" id="number">
+
+                
+    <button type="button" onclick="showResult()">Pesan</button>
+  </form>
+
+  <script>
+    function showResult() {
+      // Ambil data inputan
+      const name = document.getElementById('name').value;
+      const item = document.getElementById('item').value;
+      const quantity = document.getElementById('quantity').value;
+      const address = document.getElementById('address').value;
+      const number = document.getElementById('number').value;
+    
+
+      // Simpan data di Local Storage (opsional)
+      localStorage.setItem('orderData', JSON.stringify({ name, item, quantity, address, number }));
+
+      // Pindah ke halaman hasil
+      window.location.href = 'thankyou.html';
+    }
+  </script>
+</body>
+</html>

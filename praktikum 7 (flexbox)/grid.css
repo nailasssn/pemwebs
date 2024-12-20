@@ -1,0 +1,65 @@
+.tiga, .lima{
+    display: flex;
+}
+
+.box{
+    flex-grow: 1;
+    width: 300px;
+    border: 1px solid lightskyblue;
+    height: 100px;
+    float: left;
+    margin: auto 10px;
+
+}
+
+.box1{
+    flex-grow: 1;
+    width: 300px;
+    border: 1px solid lightskyblue;
+    height: 100px;
+    float: left;
+    margin: auto 10px;
+    margin-top: 30px;
+}
+.box:nth-child(1){
+    background: url(ikan1.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  .box:nth-child(2){
+    background: url(ikan2.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  .box:nth-child(3){
+    background: url(ikan3.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+
+  .box1:nth-child(1){
+    background: url(karang1.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  .box1:nth-child(2){
+    background: url(karang2.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  .box1:nth-child(3){
+    background: url(karang3.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  .box1:nth-child(4){
+    background: url(karang4.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  .box1:nth-child(5){
+    background: url(karang5.jpg);
+    border: 3px solid black;
+    border-radius: 20%;
+  }
+  

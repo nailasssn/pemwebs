@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil Pengembang</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 30px 100px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+        }
+        .logo {
+            font-size: 2em;
+            color: brown;
+            cursor: default;
+
+        }
+        .logo span{
+            color: rgb(163, 139, 59);
+        }
+        .navigation a {
+            font-size: 1.1em;
+            color: chocolate;
+            text-decoration: none;
+            margin-right: 40px;
+            font-weight: 500;
+        }
+        .navigation a:hover{
+            color: bisque;
+        }
+        .btn-talk {
+            color: brown;
+            text-decoration: none;
+            padding: 8px 35px;
+            background: bisque;
+            border-radius: 10px;
+            border: 2px solid brown;
+            font-weight: 500;
+            transition: .3s;
+        }
+        .btn-talk:hover{
+            color: brown;
+            background: transparent;
+        }
+        .home{
+            position: relative;
+            width: 100%;
+            height: 100vh;
+            background-color: wheat;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            align-items: center;
+            padding: 30px 100px; 
+        }
+        .content{
+            max-width: 500px;
+            color: black;
+        }
+        .content h2{
+            font-size: 3em;
+        }
+        .content h2 span{
+            color: brown;
+        }
+        .content h4{
+            font-size: 2em;
+        }
+        .content p{
+            padding: 10px 0 40px 0;
+        }
+        .btn-group a{
+            color: brown;
+            text-decoration: none;
+            padding: 10px 40px;
+            background: bisque;
+            border-radius: 10px;
+            border-radius: 10px;
+            border: 2px solid brown;
+            font-weight: 500;
+        }
+        .social-icons{
+            position: absolute;
+            bottom: 50px;
+        }
+        .social-icons a{
+            display: inline-block;
+            width: 35px;
+            height: 35px;
+            background-color: bisque;
+            border-radius: 50%;
+            margin-right: 22px;
+            text-align: center;
+            border: 1px solid bisque;
+            line-height: 35px;
+            outline: 2px solid blueviolet;
+            transition: .3s;
+        }
+        .social-icons a:hover{
+            transform: translateY(-5px);
+        }
+        .social-icons a i{
+            color: brown;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h2 class="logo"><span>a.</span>nai</h2>
+        <nav class="navigation">
+            <a href="utama.html">Home</a>
+            <a href="#">about</a>
+            <a href="#">contact</a>
+            <a href="login.html">Login</a>
+        </nav>
+        <a href="#" class="btn-talk">let's Talk</a>
+    </header>
+    <section class="home">
+        <div class="content">
+            <h2>Hi, I'm <span>Nailah Husna</span></h2>
+            <h4>Owner Of Naila's Boutique</h4>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat eum voluptatem eveniet architecto animi nesciunt fugit, corrupti nostrum nihil iste, eligendi odio perspiciatis ad laborum et debitis voluptatum possimus blanditiis.</p>
+            <div class="btn-group">
+                <a href="#">Hire Me</a>
+                <a href="utama.html">See Katalog</a>
+            </div>
+            
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="https://www.instagram.com/nailasssn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/nailah-husna-34201030a/"><i class="fab fa-linkedin"></i></a>
+                <a href="#"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            
+        </div>
+    </section>
+</body>
+</html>

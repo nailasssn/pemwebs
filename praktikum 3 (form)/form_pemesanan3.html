@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: blue;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            background-color: #fff;
+            border-radius: 8px;
+            padding: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            display: flex;
+            margin-bottom: 15px;
+            align-items: center;
+        }
+        .form-group textarea {
+            height: 60px;
+        }
+        .checkbox-group {
+            display: flex;
+            flex-direction: column;
+            margin-left: 150px;
+        }
+        .checkbox-group label {
+            margin-bottom: 5px;
+        }
+        .submit-btn {
+            text-align: center;
+        }
+        .submit-btn button {
+            background-color: green;
+            color: white;
+            padding: 10px 20px;
+            
+        }
+        .submit-btn button:hover {
+            background-color: white;
+        }
+        #result {
+            display: none;
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+            border-radius: 8px;
+        }
+        #result p {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Transaction Form</h1>
+    <form id="transactionForm">
+        <div class="form-group">
+            <label for="title">Title Here:</label>
+            <input type="text" id="title" name="title" value="MacBook Air £800">
+        </div>
+
+        <div class="form-group">
+            <label for="description">Description:</label>
+            <textarea id="description" name="description">Year: 2009
+Model: 
+Condition: Mint</textarea>
+        </div>
+
+        <div class="form-group">
+            <label for="accountNumber">Account Number:</label>
+            <input type="text" id="accountNumber" name="accountNumber" value="123-456-789-0">
+        </div>
+
+        <div class="form-group">
+            <label for="bank">Bank:</label>
+            <select id="bank" name="bank">
+                <option value="BCA">BCA</option></option>
+                <option value="MANDIRI">MANDIRI</option>
+                <option value="BSI">BSI</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="accountHolder">Account Holder:</label>
+            <input type="text" id="accountHolder" name="accountHolder" value="Name Here">
+        </div>
+
+        <div class="form-group">
+            <label for="transaction">Transaction:</label>
+            <input type="number" id="transaction" name="transaction" value="1" min="1" max="3">
+        </div>
+
+        <div class="checkbox-group">
+            <label><input type="checkbox" id="sendToPhone" name="sendToPhone" checked> Send to Mobile Phone</label>
+            <label><input type="checkbox" id="sendToEmail" name="sendToEmail" checked> Send to Email</label>
+        </div>
+
+        <div class="form-group">
+            <label for="mobilePhone">Send to Mobile Phone:</label>
+            <input type="text" id="mobilePhone" name="mobilePhone" value="1234567890, 1234567891">
+        </div>
+
+        <div class="form-group">
+            <label for="email">Send to Email:</label>
+            <input type="email" id="email" name="email" value="mfmm2g13@soton.ac.uk, fys_06@yahoo.com">
+        </div>
+
+        <div class="submit-btn">
+            <button type="button" onclick="generateResult()">Generate Nabr Link</button>
+        </div>
+    </form>
+
+    <div id="result">
+        <h2>Transaction Details</h2>
+        <p id="resultTitle"></p>
+        <p id="resultDescription"></p>
+        <p id="resultAccountNumber"></p>
+        <p id="resultBank"></p>
+        <p id="resultAccountHolder"></p>
+        <p id="resultTransaction"></p>
+        <p id="resultMobile"></p>
+        <p id="resultEmail"></p>
+    </div>
+</div>
+
+<script>
+function generateResult() {
+    // Get form values
+    const title = document.getElementById('title').value;
+    const description = document.getElementById('description').value;
+    const accountNumber = document.getElementById('accountNumber').value;
+    const bank = document.getElementById('bank').value;
+    const accountHolder = document.getElementById('accountHolder').value;
+    const transaction = document.getElementById('transaction').value;
+    const sendToPhone = document.getElementById('sendToPhone').checked;
+    const sendToEmail = document.getElementById('sendToEmail').checked;
+    const mobilePhone = document.getElementById('mobilePhone').value;
+    const email = document.getElementById('email').value;
+
+    // Display result
+    document.getElementById('resultTitle').textContent = `Title: ${title}`;
+    document.getElementById('resultDescription').textContent = `Description: ${description}`;
+    document.getElementById('resultAccountNumber').textContent = `Account Number: ${accountNumber}`;
+    document.getElementById('resultBank').textContent = `Bank: ${bank}`;
+    document.getElementById('resultAccountHolder').textContent = `Account Holder: ${accountHolder}`;
+    document.getElementById('resultTransaction').textContent = `Transaction: ${transaction}`;
+    
+    if (sendToPhone) {
+        document.getElementById('resultMobile').textContent = `Send to Mobile Phone: ${mobilePhone}`;
+    } else {
+        document.getElementById('resultMobile').textContent = 'Send to Mobile Phone: Not selected';
+    }
+
+    if (sendToEmail) {
+        document.getElementById('resultEmail').textContent = `Send to Email: ${email}`;
+    } else {
+        document.getElementById('resultEmail').textContent = 'Send to Email: Not selected';
+    }
+
+    // Show result section
+    document.getElementById('result').style.display = 'block';
+}
+</script>
+
+</body>
+</html>

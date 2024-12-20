@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket Keberangkatan Pesawat</title>
+    <style>
+        body{
+            background: url(https://www.timesaerospace.aero/sites/aerospace/times/files/styles/lead_image_2_1280x720_/public/2024-05/Etihad%20celebrating%20Zayed%20International%20Airport%20LR.jpg?itok=ycnoIOEd) no-repeat;
+            background-size: cover;
+
+        }
+        .error {
+            color: red;
+            font-size: 0.9em;
+        }
+        .invalid {
+            border: 1px solid red;
+        }
+        .form-container {
+            max-width: 400px;
+            margin: 0 auto;
+            box-sizing: border-box;
+            border-radius: 20px;
+            padding: 20px;
+            margin-top: 70px;
+            border: 2px solid black;
+            background: transparent;
+            backdrop-filter: blur(20px);
+            text-align: center;
+            box-shadow: 5px solid rgb(169, 214, 243);
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Pemesanan Tiket Keberangkatan Pesawat</h1>
+        <form id="ticketForm">
+            <label for="name">Nama:</label><br>
+            <input type="text" id="name" name="name"><br>
+            <span class="error" id="nameError"></span><br>
+
+            <label for="email">Email:</label><br>
+            <input type="email" id="email" name="email"><br>
+            <span class="error" id="emailError"></span><br>
+
+            <label for="time">Jam Keberangkatan (HH:MM):</label><br>
+            <input type="time" id="time" name="time"><br>
+            <span class="error" id="timeError"></span><br>
+
+            <label for="destination">Tujuan Keberangkatan:</label><br>
+            <input type="text" id="destination" name="destination"><br>
+            <span class="error" id="destinationError"></span><br>
+
+            <label for="tickets">Jumlah Tiket:</label><br>
+            <input type="number" id="tickets" name="tickets" min="1"><br>
+            <span class="error" id="ticketsError"></span><br><br>
+
+            <button type="button" onclick="validateForm()">Submit</button>
+        </form>
+
+        <div id="output"></div>
+    </div>
+
+    <script>
+        function validateForm() {
+            // Reset errors
+            document.querySelectorAll('.error').forEach(e => e.textContent = '');
+            document.querySelectorAll('input').forEach(e => e.classList.remove('invalid'));
+
+            let isValid = true;
+
+            // Get form values
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const time = document.getElementById('time').value.trim();
+            const destination = document.getElementById('destination').value.trim();
+            const tickets = document.getElementById('tickets').value.trim();
+
+            // Name validation
+            if (name === '') {
+                isValid = false;
+                document.getElementById('nameError').textContent = 'Nama tidak boleh kosong';
+                document.getElementById('name').classList.add('invalid');
+            }
+
+            // Email validation
+            const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailPattern.test(email)) {
+                isValid = false;
+                document.getElementById('emailError').textContent = 'Email tidak valid';
+                document.getElementById('email').classList.add('invalid');
+            }
+
+            // Time validation
+            if (time === '') {
+                isValid = false;
+                document.getElementById('timeError').textContent = 'Jam keberangkatan tidak boleh kosong';
+                document.getElementById('time').classList.add('invalid');
+            }
+
+            // Destination validation
+            if (destination === '') {
+                isValid = false;
+                document.getElementById('destinationError').textContent = 'Tujuan tidak boleh kosong';
+                document.getElementById('destination').classList.add('invalid');
+            }
+
+            // Tickets validation
+            if (tickets === '' || isNaN(tickets) || parseInt(tickets) <= 0) {
+                isValid = false;
+                document.getElementById('ticketsError').textContent = 'Jumlah tiket harus lebih dari 0';
+                document.getElementById('tickets').classList.add('invalid');
+            }
+
+            // If valid, show data
+            if (isValid) {
+                const output = `
+                    <h2>Data Pemesanan</h2>
+                    <p>Nama: ${name}</p>
+                    <p>Email: ${email}</p>
+                    <p>Jam Keberangkatan: ${time}</p>
+                    <p>Tujuan: ${destination}</p>
+                    <p>Jumlah Tiket: ${tickets}</p>
+                `;
+                document.getElementById('output').innerHTML = output;
+                document.getElementById('ticketForm').reset();
+            }
+        }
+    </script>
+</body>
+</html>

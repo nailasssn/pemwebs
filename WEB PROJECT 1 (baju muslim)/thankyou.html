@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hasil Pemesanan</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background: url(https://i.pinimg.com/736x/8f/d3/a3/8fd3a3cb0c04b7becb57dd063809645c.jpg);
+      text-align: center;
+      margin-top: 70px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      background-color: #f7e6ce;
+    }
+    h1, h2 {
+      color: #4CAF50;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 15px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Thankyou for ordering love!</h1>
+    <p><strong>Nama Pemesan:</strong> <span id="name"></span></p>
+    <p><strong>Nama Barang:</strong> <span id="item"></span></p>
+    <p><strong>Jumlah Barang:</strong> <span id="quantity"></span></p>
+    <p><strong>Alamat Pengiriman:</strong> <span id="address"></span></p>
+    <p><strong>telp number:</strong> <span id="number"></span></p>
+    <h2>Pesanan anda sudah diterima</h2>
+    <p>jangan bosen untuk belanja di toko kami, Enjoy your shopping, Hope you like it!!</p>
+  </div>
+
+  
+  <script>
+    // Ambil data dari Local Storage
+    const orderData = JSON.parse(localStorage.getItem('orderData'));
+
+    if (orderData) {
+      document.getElementById('name').textContent = orderData.name;
+      document.getElementById('item').textContent = orderData.item;
+      document.getElementById('quantity').textContent = orderData.quantity;
+      document.getElementById('address').textContent = orderData.address;
+      document.getElementById('number').textContent = orderData.number;
+    } else {
+      document.body.innerHTML = '<h1>Data tidak ditemukan. Silakan kembali ke form pemesanan.</h1>';
+    }
+  </script>
+</body>
+</html>

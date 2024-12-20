@@ -1,0 +1,27 @@
+header{
+    background-color: rgb(236, 47, 79);
+    margin: -10px;
+  }
+  
+  header ul{
+    display: flex;
+    list-style: none;
+    padding: 1rem;
+    align-items: center;
+    margin: 0;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    position: relative;
+    transition: color 0.25s;
+  }
+  header li{
+    margin: 0 1.5rem;
+    font-weight: bold;
+  }
+  header li.logo{
+    margin-right: auto;
+  }
+  header img.logo{
+    width: 100px;
+  }
