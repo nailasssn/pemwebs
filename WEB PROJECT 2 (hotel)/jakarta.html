@@ -1,0 +1,471 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>BALI HOTEL🏝️</title>
+    <style>
+       .container-fluid img{
+            width: 400px;
+            height: 250px;
+            margin-top: 40px;
+       } 
+       .text-judul1{
+            margin-top: 30px;
+       }
+       .table{
+            margin-top: 50px;
+            justify-content: center;
+        }
+        .keunggulan{
+            margin-left: 15%;
+        }
+       /* rating */
+       .rating-section {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+            margin-top: 30px;
+        }
+        .rating-header {
+            font-size: 28px;
+            color: orange;
+            margin-bottom: 10px;
+        }
+        .rating-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 10px;
+        }
+        .rating-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .progress-bar {
+            flex: 1;
+            margin: 0 10px;
+            background-color: #e0e0e0;
+            height: 10px;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .progress {
+            height: 100%;
+            border-radius: 5px;
+        }
+        .progress-bar .progress:nth-child(odd) {
+            background-color: green;
+        }
+        .progress-bar .progress:nth-child(even) {
+            background-color: #2196F3;
+        }
+        .reviews-section {
+            margin-top: 20px;
+            display: flex;
+            
+        }
+        .review-item {
+            padding: 15px;
+            background-color: #fff;
+            border: 1px solid black;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            margin-bottom: 15px;
+            justify-content: space-between;
+        }
+        .review-item .fa {
+            color: blue;
+            margin-right: 8px;
+        }
+        .review-item p {
+            color: #555;
+            margin: 5px 0 0 25px;
+        }
+        /* Footer */
+        footer {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: whitesmoke;
+            padding: 0;
+            margin: 0;
+            font-size: 16px;
+            text-align: center;
+            color: black;
+            padding-top: 50px;
+            margin-top: 30px;
+        }
+        .container{
+            display: flex;
+            justify-content: space-evenly;
+
+        }
+        .footer{
+            width: 33.3%;
+        }
+
+        footer h3{
+            font-size: 28px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .footer-content p {
+            width: 190px;
+            margin: auto;
+            padding: 7px;
+            
+        }
+
+        .footer-content ul {
+            text-align: center;
+        }
+        .list{
+            padding: 0;
+        }
+
+        .list li{
+            width: auto;
+            text-align: center;
+            list-style-type: none;
+            padding: 7px;
+            position: relative;
+
+        }
+
+        .list li::before{
+            content: '';
+            position: absolute;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            top: 100%;
+            width: 0;
+            height: 2px;
+            background: #ec8e5e;
+            transition-duration: .5s;
+        }
+        .list li:hover::before{
+            width: 70px;
+        }
+        .social.icons{
+            text-align: center;
+            padding: 0;
+        }
+        .social-icons h3{
+            color: black;
+        }
+        .masuk{
+            font-size: 2rem;
+            justify-content: center;
+            display: flex;
+            gap: 20px;
+            margin-top: 30%;
+        }
+
+        .social.icons li{
+            display: inline-block;
+            text-align: center;
+            padding: 5px;
+        }
+        .social.icons i{
+            font-size: 25px;
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        a:hover{
+            color: palevioletred;
+        }
+        .social.icons i:hover{
+            color: #ec8e5e;
+        }
+        .bottom-bar {
+            text-align: center;
+            padding: 0;
+            margin: 70px;
+            max-width: 3000px;
+        }
+        .bottom-bar p{
+            color: black;
+            margin: 0;
+            font-size: 16px;
+            padding: 7px;
+
+        }
+    </style>
+    <!-- bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <!-- icon bootstrap -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  </head>
+  <body>
+
+        <!-- navbar -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="container-fluid">
+            <a class="navbar-brand" href="#">The Noble Escape</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="hotel.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="explore.html">About Us</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="hotel.html">Review</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="booking.html">Booking</a>
+                </li>
+                </ul>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Cabang
+                    </button>
+                    <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="bali.html">Bali🏕️</a></li>
+                    <li><a class="dropdown-item" href="jakarta.html">Jakarta🏣</a></li>
+                    <li><a class="dropdown-item" href="nusapenida.html">Nusa Penida🏖️</a></li>
+                    </ul>
+                </div>
+                <form class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+                </form>
+            </div>
+            </div>
+        </nav>
+
+            <!-- carousel -->
+            <div id="carouselExample" class="carousel-slide">
+                <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/02/6c/a8/43/pullman-jakarta-central.jpg?w=2400&h=-1&s=1" class="d-block w-100" alt="...">
+                </div>
+                <div class="carousel-item">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/607105779.jpg?k=30c130ce15ecdc3028122942d21337da86bf7a224e6bf8b9ee45038d26ac1a68&o=&hp=1" class="d-block w-100" alt="...">
+                </div>
+                <div class="https://cf.bstatic.com/xdata/images/hotel/max1024x768/575992755.jpg?k=2716c0a7fefcb7d3b344c5906cf03661ebd3eec98606fe716967aac7d675714f&o=&hp=1" class="d-block w-100" alt="...">
+                </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        
+        <!-- gambar -->
+            <div class="container-fluid">  
+                    <h3 class="text-judul1">
+                        The Noble Escape Hotel Jakarta🏙️
+                    </h3>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <p>Berlokasi strategis di jantung ibu kota, The Noble Escape Jakarta menghadirkan kemewahan dan kenyamanan di tengah kesibukan metropolitan. Hotel ini dirancang sebagai oase modern dengan sentuhan elegan, menawarkan pengalaman menginap yang sempurna bagi pelancong bisnis maupun wisatawan. Setiap kamar dilengkapi dengan fasilitas canggih, pemandangan kota yang menakjubkan, dan layanan personal untuk memastikan kenyamanan maksimal. Restoran hotel menyajikan hidangan internasional yang mewah, sementara lounge rooftop menjadi tempat favorit untuk menikmati malam dengan suasana eksklusif, lengkap dengan panorama gemerlap lampu kota Jakarta.</p>
+
+                            <p>The Noble Escape Jakarta juga menyediakan fasilitas konferensi dan ruang acara dengan desain modern dan teknologi mutakhir, menjadikannya pilihan utama untuk pertemuan bisnis maupun acara pribadi. Setelah seharian beraktivitas, tamu dapat bersantai di spa mewah, berolahraga di pusat kebugaran 24 jam, atau berenang di kolam infinity yang dikelilingi oleh taman tropis. Dengan lokasinya yang dekat dengan pusat perbelanjaan premium, kawasan bisnis, dan destinasi budaya, The Noble Escape Jakarta adalah tempat di mana kenyamanan, kemewahan, dan gaya hidup kota berpadu dengan sempurna.🏢✨</p>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="keunggulan">
+                                <h3>
+                                    Keunggulan Hotel
+                                </h3>
+                                <ul>
+                                    <li class="list-item">
+                                        Akses kursi roda, Lift, Tali darurat di kamar mandi, Fasilitas tamu difabel
+                                    </li>
+                                    <li class="list-item">
+                                        Kolam pribadi, Kolam renang outdoor
+                                    </li>
+                                    <li class="list-item">
+                                        Antar-jemput bandara
+                                    </li>
+                                    <li class="list-item">
+                                        Resepsionis 24 Jam
+                                    </li>
+                                    <li class="list-item">
+                                        Pemandangan kota, Pemandangan kolam renang
+
+                                    </li>
+                                    <li class="list-item">
+                                        Pusat kebugaran
+                                    </li>
+                                    <li class="list-item">
+                                        Restoran
+                                    </li>
+                                </ul> 
+                                <a href="booking.html" class="btn btn-primary" style="width: 300px;">Pesan Sekarang</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img alt="Bootstrap Image Preview" src="https://cf.bstatic.com/xdata/images/hotel/max1280x900/611824626.jpg?k=55702dbdbec7c58b87f01d585e6c620b1decc38191ba5409cb0ccea25517b516&o=&hp=1" />
+                        </div>
+                        <div class="col-md-4">
+                            <img alt="Bootstrap Image Preview" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/621701425.jpg?k=a85667b629beb659d7217f46fb0f8699bb1379f4fc27812de8ad38d71eaf8a38&o=&hp=1" />
+                        </div>
+                        <div class="col-md-4">
+                            <img alt="Bootstrap Image Preview" src="https://cf.bstatic.com/xdata/images/hotel/max1024x768/622189914.jpg?k=b61155cdb1d66304c3443f89b831c6f676f9ab1ecb9e84cda412c29b3d8bc94c&o=&hp=1" />
+                        </div>
+                    </div>
+                  
+            </div>
+
+            <!-- table -->
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">No</th>
+                    <th scope="col">Tipe Kamar</th>
+                    <th scope="col">Nama Tamu</th>
+                    <th scope="col"></th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>DELUXE TWIN BED Breakfast</td>
+                    <td>Febrian adi</td>
+                    <td><a href="#" class="btn btn-primary">Tampilkan harga</a> </td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>Deluxe King Bed Room</td>
+                    <td>Fakhry Algi</td>
+                    <td><a href="#" class="btn btn-primary">Tampilkan harga</a> </td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>Superior Twin Bed</td>
+                    <td>Aisyah Nur</td>
+                    <td><a href="#" class="btn btn-primary">Tampilkan harga</a> </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <!-- rating -->
+            <div class="rating-section">
+                <div class="rating-header">8.7 <span style="font-size: 18px;">Hebat</span></div>
+                <div class="rating-grid">
+                    <div class="rating-item">
+                        <span>Staf</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 92%;"></div>
+                        </div>
+                        <span>9.2</span>
+                    </div>
+                    <div class="rating-item">
+                        <span>Kenyamanan</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 92%;"></div>
+                        </div>
+                        <span>9.2</span>
+                    </div>
+                    <div class="rating-item">
+                        <span>Fasilitas</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 88%;"></div>
+                        </div>
+                        <span>8.8</span>
+                    </div>
+                    <div class="rating-item">
+                        <span>Kebersihan</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 92%;"></div>
+                        </div>
+                        <span>9.2</span>
+                    </div>
+                    <div class="rating-item">
+                        <span>Harganya Sepadan</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 89%;"></div>
+                        </div>
+                        <span>8.9</span>
+                    </div>
+                    <div class="rating-item">
+                        <span>Lokasi</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 88%;"></div>
+                        </div>
+                        <span>8.8</span>
+                    </div>
+                    <div class="rating-item">
+                        <span>Wi-Fi Gratis</span>
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 87%;"></div>
+                        </div>
+                        <span>8.7</span>
+                    </div>
+                </div>
+            </div>
+        
+            <div class="reviews-section">
+                <div class="review-item">
+                    <i class="fa fa-user"></i> Nailah Husna (Indonesia)
+                    <p>⭐️⭐️⭐️⭐️</p>
+                    <p>"Hotel ini benar-benar memberikan pengalaman menginap yang luar biasa. Dari saat check-in, stafnya sangat ramah dan membantu, bahkan membantu kami membawa koper ke kamar. Kamarnya sangat luas, bersih, dan elegan dengan interior modern. Kasurnya sangat nyaman, dan fasilitas di kamar seperti minibar, mesin kopi, dan perlengkapan mandi premium membuat kami merasa dimanjakan. Sarapan pagi luar biasa dengan banyak pilihan makanan internasional dan lokal."</p>
+                </div>
+                <div class="review-item">
+                    <i class="fa fa-user"></i> Lussyie (Indonesia)
+                    <p>⭐️⭐️⭐️</p>
+                    <p>"Hotel ini cocok untuk kamu yang hanya butuh tempat tidur dan mandi saja. Harganya sangat terjangkau, terutama untuk backpacker seperti saya. Kamarnya kecil, tapi cukup bersih dan rapi. Namun, temboknya tipis sehingga suara dari kamar sebelah atau lorong kadang terdengar jelas, jadi kalau kamu butuh ketenangan mungkin ini bukan pilihan terbaik. Lokasinya bagus, dekat dengan stasiun kereta dan tempat makan murah. Saya juga suka dengan akses internet yang cukup cepat meskipun gratis. Overall, hotel ini pas untuk traveler dengan budget rendah yang nggak terlalu rewel soal kenyamanan"</p>
+                </div>
+                <div class="review-item">
+                    <i class="fa fa-user"></i> Dini (jakarta)
+                    <p>⭐️⭐️⭐️⭐️⭐️</p>
+                    <p>"Kalau kamu suka pemandangan laut, resort ini wajib banget dicoba! Kamarnya luas, nyaman, dan balkon pribadinya langsung menghadap ke pantai, jadi kamu bisa menikmati matahari terbenam setiap sore. Fasilitasnya juga lengkap, ada kolam renang besar, spa, dan restoran seafood yang menakjubkan. Tapi, ada beberapa kekurangan kecil, seperti AC yang kadang kurang dingin, dan proses check-in yang agak lama. Meski begitu, pengalaman keseluruhannya tetap menyenangkan, terutama karena lokasinya yang tenang dan cocok untuk relaksasi. Akan lebih baik jika mereka meningkatkan kecepatan pelayanan."</p>
+                </div>
+            </div>
+        <!-- Footer -->
+            <footer>
+                <div class="container">
+                    <div class="footer-content">
+                        <h3>Kontak Kami:</h3>
+                        <p>Email: TheNoubleHotel@gmail.com</p>
+                        <p>Alamat: Jalan zizaga No. 123</p>
+                        <p>phone : 08979987656</p>
+                    </div>
+                    <div class="footer-links">
+                        <h3>Quick Link</h3>
+                        <ul class="list">
+                            <li><a href="hotel.html">Home</a></li>
+                            <li><a href="hotel.html">About us</a></li>
+                            <li><a href="bali.html">Cabang</a></li>
+                            <li><a href="booking.html">Booking</a></li>
+                        </ul>
+                    </div>
+            
+                    <div class="social-icons">
+                        <h3>Follow Us</h3>
+                        <div class="masuk">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.instagram.com/nailasssn?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://web.whatsapp.com/"><i class="fab fa-whatsapp"></i></a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bottom-bar">
+                    <p>&copy; 2024  Website by Nailah Husna. Hak Cipta Dilindungi.</p>
+                </div>
+            </footer>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </body>
+</html>
